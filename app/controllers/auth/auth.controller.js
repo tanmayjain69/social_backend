@@ -46,12 +46,11 @@ exports.signin = (req, res) => {
         expiresIn: 86400, // 24 hours
       });
 
-      var authorities = [];
+      
       res.status(200).send({
         id: user.id,
         username: user.username,
         email: user.email,
-        roles: authorities,
         accessToken: token,
       });
     })

@@ -36,6 +36,15 @@ module.exports = function (app) {
                     $username: "string",
                     $password: "string"
                 }
+        #swagger.responses['200'] = {
+                in: 'body',
+                description: 'routes for user auth return authentication token',
+                schema: {
+                  "$id": 1,
+    "$username": "tanmayj",
+    "$email": "tanmayj@123",
+    "$accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQyOTM1NDgyLCJleHAiOjE2NDMwMjE4ODJ9.5q4I-H07ceNaItj6xYRHAMUuUBe1mJ3DGP-wzpchg-I"
+}
         }, */
   );
 };
