@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger_output.json');
 const app = express();
 
 var corsOptions = {
@@ -41,6 +42,7 @@ app.get('/', (req, res) => {
 require('./app/routes/auth.routes')(app);
 require('./app/routes/userpro.routes')(app);
 require('./app/routes/posts.routes')(app);
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

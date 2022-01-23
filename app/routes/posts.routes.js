@@ -6,11 +6,107 @@ module.exports = function (app) {
     next();
   });
 
-  app.post('/api/posts/insert', [authJwt.verifyToken], controller_post.insert);
-  app.delete('/api/posts/delete', [authJwt.verifyToken], controller_post.delete);
-  app.post('/api/posts/like', [authJwt.verifyToken], controller_post.update);
-  app.post('/api/posts/unlike', [authJwt.verifyToken], controller_post.update);
-  app.post('/api/posts/comment', [authJwt.verifyToken], controller_post.update);
-  app.get('/api/posts/get', [authJwt.verifyToken], controller_post.getByid);
-  app.get('/api/posts/getAll', [authJwt.verifyToken], controller_post.getAll);
+  app.post(
+    '/api/posts/insert',
+    [authJwt.verifyToken],
+    controller_post.insert
+    /*    #swagger.tags = ['POSTS']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user posts',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $title: "string",
+                    $discription: "string",
+                    $post_id: "string",
+                }
+        }, */
+  );
+  app.delete(
+    '/api/posts/delete',
+    [authJwt.verifyToken],
+    controller_post.delete
+    /*    #swagger.tags = ['POSTS']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user posts',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $post_id: "boolean",
+                }
+        }, */
+  );
+  app.post(
+    '/api/posts/like',
+    [authJwt.verifyToken],
+    controller_post.update
+    /*    #swagger.tags = ['POSTS']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user posts',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $like: "boolean",
+                    $post_id: "string",
+                }
+        }, */
+  );
+  app.post(
+    '/api/posts/unlike',
+    [authJwt.verifyToken],
+    controller_post.update
+    /*    #swagger.tags = ['POSTS']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user posts',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $unlike: "boolean",
+                    $post_id: "string",
+                }
+        }, */
+  );
+  app.post(
+    '/api/posts/comment',
+    [authJwt.verifyToken],
+    controller_post.update
+    /*    #swagger.tags = ['POSTS']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user posts',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $post_id: "string",
+                    $comment: "string",
+                }
+        }, */
+  );
+  app.get(
+    '/api/posts/get',
+    [authJwt.verifyToken],
+    controller_post.getByid
+    /*    
+  #swagger.tags = ['POSTS']
+  #swagger.description = 'routes for user posts'
+    #swagger.parameters['username'] = { description: 'string' }
+    #swagger.parameters['post_id'] = { description: 'string' }
+       
+    */
+  );
+  app.get(
+    '/api/posts/getAll',
+    [authJwt.verifyToken],
+    controller_post.getAll
+    /*    
+  #swagger.tags = ['POSTS']
+  #swagger.description = 'routes for user posts'
+    #swagger.parameters['username'] = { description: 'string' }
+       
+    */
+  );
 };

@@ -11,7 +11,31 @@ module.exports = function (app) {
     '/api/auth/signup',
     [verifySignUp.checkDuplicateUsernameOrEmail, verifySignUp.checkRolesExisted],
     controller.signup
+    /*    
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user auth',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $email: "string",
+                    $password: "string",
+                }
+        }, */
   );
 
-  app.post('/api/auth/signin', controller.signin);
+  app.post(
+    '/api/auth/signin',
+    controller.signin
+    /*    #swagger.tags = ['AUTH']
+        #swagger.parameters['params'] = {
+                in: 'body',
+                description: 'routes for user auth return authentication token',
+                required: true,
+                schema: {
+                    $username: "string",
+                    $password: "string"
+                }
+        }, */
+  );
 };
