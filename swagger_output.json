@@ -5,7 +5,7 @@
     "title": "backend assignment",
     "description": ""
   },
-  "host": "social-backend-84.herokuapp.com",
+  "host": "https://social-backend-84.herokuapp.com",
   "basePath": "/",
   "tags": [
     {
@@ -64,26 +64,18 @@
         "description": "",
         "parameters": [
           {
-            "name": "params",
+            "name": "body",
             "in": "body",
-            "description": "routes for user auth return authentication token",
-            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "username": {
-                  "type": "string",
-                  "example": "string"
+                  "example": "any"
                 },
                 "password": {
-                  "type": "string",
-                  "example": "string"
+                  "example": "any"
                 }
-              },
-              "required": [
-                "username",
-                "password"
-              ]
+              }
             }
           }
         ],
