@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 module.exports = {
-  secret: 'assignmmet-reunion-secret-key',
+  secret: process.env.SECRET,
 };
