@@ -89,7 +89,31 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "routes for user auth return authentication token",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number",
+                  "example": 1
+                },
+                "username": {
+                  "type": "string",
+                  "example": "tanmayj"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "tanmayj@123"
+                },
+                "accessToken": {
+                  "type": "string",
+                  "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQyOTM1NDgyLCJleHAiOjE2NDMwMjE4ODJ9.5q4I-H07ceNaItj6xYRHAMUuUBe1mJ3DGP-wzpchg-I"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
