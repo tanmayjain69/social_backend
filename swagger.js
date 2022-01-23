@@ -12,7 +12,7 @@ const doc = {
     title: 'backend assignment', // by default: 'REST API'
     description: '', // by default: ''
   },
-  host: 'localhost:8080', // by default: 'localhost:3000'
+  host: 'https://social-backend-84.herokuapp.com/', // by default: 'localhost:3000'
   basePath: '/', // by default: '/'
   schemes: [], // by default: ['http']
   consumes: [], // by default: ['application/json']
