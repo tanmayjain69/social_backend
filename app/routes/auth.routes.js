@@ -37,7 +37,7 @@ module.exports = function (app) {
                     $password: "string"
                 }
               }
-        #swagger.responses['200'] = {
+        #swagger.responses[200] = {
                 description: 'routes for user auth return authentication token',
                 schema: {
                   "$id": 1,
